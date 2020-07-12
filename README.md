@@ -14,25 +14,54 @@ programme. We will work today with the open data science tool **R**.
 
 * Install [R](https://cran.r-project.org/bin/windows/base/) and [RStudio](https://rstudio.com/products/rstudio/download/) on Windows 7, 8 or 10. A tutorial for a beginner is [here](https://medium.com/@GalarnykMichael/install-r-and-rstudio-on-windows-5f503f708027).
 
-* Install the following packages before the course: rgdal, mapdata, mapproj,
-maps, ggplot2, ggrepel, legendMap, dplyr, scales, and ggmap. A tutorial for package installation in RStudio is [here](https://subscription.packtpub.com/book/big_data_and_business_intelligence/9781783980246/1/ch01lvl1sec11/installing-libraries-in-r-and-rstudio).
+* Install the following packages before the course: 
+* [rgdal](https://cran.r-project.org/web/packages/rgdal/index.html), 
+* [mapdata](https://cran.r-project.org/web/packages/mapdata/index.html),
+* [mapproj](https://cran.r-project.org/web/packages/mapproj/index.html),
+* [maps](https://cran.r-project.org/web/packages/maps/index.html), 
+* [ggplot2](https://cran.r-project.org/web/packages/ggplot2/index.html), 
+* [ggrepel](https://cran.r-project.org/web/packages/ggrepel/index.html), 
+* [legendMap](https://github.com/3wen/legendMap) 
+* [dplyr](https://cran.r-project.org/web/packages/dplyr/index.html), 
+* [scales](https://cran.r-project.org/web/packages/scales/index.html), and 
+* [ggmap](https://cran.r-project.org/web/packages/ggmap/index.html). 
+
+A tutorial for package installation in RStudio is [here](https://subscription.packtpub.com/book/big_data_and_business_intelligence/9781783980246/1/ch01lvl1sec11/installing-libraries-in-r-and-rstudio).
+
+It is more easier to install CRAN packages at once by typing 
+
+```
+install.packages(c("rgdal", "mapdata", "mapproj" ,"maps" ,"ggplot2", "ggrepel", "dplyr", "scales", "ggmap"))
+```
+
+For installation of [legendMap](https://github.com/3wen/legendMap) package you need to install the devtools](https://cran.r-project.org/web/packages/devtools/index.html) package
+first.
+
+```
+install.pacakges("devtools")
+```
+
+Then install [legendMap](https://github.com/3wen/legendMap)
+
+```
+devtools::install_github("3wen/legendMap")
+
+```
+
+
 
 * Download the data for exercise [here](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/datafiles.zip)
 
 ## Course outline
 
 
-1.  Working directory setting, data preparation and shapefile importation (5 mn)
-
-2.  Rendering a basic map in R using ggplot2 (10 min)
-
-3.  Rendering a choropleth map (20 min)
-
-4.  Add a scale bar and North Arrow (5 min)
-
-5.  Tips (5 min)
-
-6.  Q & A (15 min)
+| 1. | Working directory setting, data preparation and shapefile importation | (\*\*5 mn\*\*)   |
+| -- | --------------------------------------------------------------------- | ---------------- |
+| 2. | Rendering a basic map in R using ggplot2                              | (\*\*10 min\*\*) |
+| 3. | Rendering a choropleth map                                            | (\*\*20 min\*\*) |
+| 4. | Add a scale bar and North Arrow                                       | (\*\*5 min\*\*)  |
+| 5. | Tips                                                                  | (\*\*5 mn\*\*)   |
+| 6. | Q & A                                                                 | (\*\*15 min\*\*) |
 
 
 # 1. Working directory setting, data preparation and shapefile importation
