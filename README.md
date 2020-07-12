@@ -1,5 +1,3 @@
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
-
 
 # R-for-geographic-map-Session-1
 This is a tutorial for rendering geographic map using R
@@ -224,7 +222,7 @@ p
 You should get this output:
 
 
-[Fig.1](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/img/map%2001.png)
+![Fig.1](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/img/map%2001.png)
 
 
 
@@ -358,7 +356,7 @@ p
 ```
 
 
-[Fig.2](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/img/map%2002.png)
+![Fig.2](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/img/map%2002.png)
 
 
 
@@ -430,7 +428,7 @@ p
 
 
 
-[Fig.3](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/img/map%2003.png)
+![Fig.3](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/img/map%2003.png)
 
 
 
@@ -465,7 +463,7 @@ You will get this output
 
 
 
-[Fig.4](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/img/map%2004.png)
+![Fig.4](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/img/map%2004.png)
 
 
 
