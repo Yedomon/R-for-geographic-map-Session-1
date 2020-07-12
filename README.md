@@ -220,8 +220,7 @@ p
 
 You should get this output:
 
-
-[My image](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/img/map%2001.png)
+c
 
 
 
@@ -356,6 +355,7 @@ p
 ```
 
 
+[Fig.2](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/img/map%2002.png)
 
 Insert an Image
 
@@ -430,7 +430,8 @@ p
 
 
 
-Insert an image here
+
+[Fig.3](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/img/map%2003.png)
 
 
 
@@ -465,7 +466,8 @@ You will get this output
 
 
 
-Insert an image here
+
+[Fig.4](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/img/map%2004.png)
 
 
 
