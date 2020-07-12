@@ -64,24 +64,77 @@ mySHP="C:/Users/ANGE/Documents/R MAP"
 myFile=readOGR (mySHP, layer="SEN_adm1", stringsAsFactors=FALSE)
 ```
 
+This result should appear
+
+
+```
+[1] "SpatialPolygonsDataFrame"
+attr(,"package")
+[1] "sp"
+
+```
+
+
+
 ## 1.5. Check the class of the shapefile
 ```
 class(myFile)
 ```
+
+The class should display as follow
+
+```
+[1] "SpatialPolygonsDataFrame"
+attr(,"package")
+[1] "sp"
+
+```
+
+
 
 ## 1.6. Check the variables names
 ```
 names(myFile)
 ```
 
+
+
+The name will display as follow:
+
+```
+
+[1] "ID_0"      "ISO"       "NAME_0"    "ID_1"      "NAME_1"    "TYPE_1"   
+[7] "ENGTYPE_1" "NL_NAME_1" "VARNAME_1"
+
+
+```
+
+
 ## 1.7. Check the regions names
 ```
 print(myFile$NAME_1)
 ```
 
+The regions names should appear as follow:
+
+
+```
+
+[1] "Dakar"       "Diourbel"    "Fatick"      "KÃ©dougou"   "Kaffrine"   
+ [6] "Kaolack"     "Kolda"       "Louga"       "Matam"       "SÃ©dhiou"   
+[11] "Saint-Louis" "Tambacounda" "ThiÃ¨s"      "Ziguinchor" 
+
+```
+
+
+
 
 
 ## 1.8. Library loading
+
+You can import the packages like this:
+
+
 ```
 library(rgdal)
 library(mapdata)
@@ -95,6 +148,13 @@ library(scales)
 library(ggmap)
 ```
 
+Or, to load multiple packages at once, type:
+
+```
+Packages = "rgdal", "mapdata", "mapproj" ,"maps" ,"ggplot2", "ggrepel", "legendMap", "dplyr", "scales", "ggmap")
+
+lapply(Packages, library, character.only = TRUE)
+```
 
 # 2. Rendering a basic map in R using ggplot2
 
@@ -111,7 +171,7 @@ myDF = fortify(myFile, region = "NAME_1")
 Type: `head(myDF, 4)`
 
 
-| Longitude  | Latitude | order | hole  | piece | id    | group   |
+| long       | lat      | order | hole  | piece | id    | group   |
 | ---------- | -------- | ----- | ----- | ----- | ----- | ------- |
 | \-17.16056 | 14.89375 | 1     | FALSE | 1     | Dakar | Dakar.1 |
 | \-17.16004 | 14.89333 | 2     | FALSE | 1     | Dakar | Dakar.1 |
@@ -151,12 +211,18 @@ p <- ggplot() +
   ggtitle("Basic map with ggplot2")
 ```
 
-The map is in p
+The map is in p.
 
 ```
 p
 
 ```
+
+You should get this output:
+
+
+Insert an image
+
 
 
 # 3. Rendering a choropleth map
@@ -180,23 +246,23 @@ mydata1 = read.csv("region_names.csv", header=TRUE, sep=";")
 
 Type:`head(mydata, 4)`
 
-| Longitude  | Latitude | order | hole  | piece | id    | group   |
-| ---------- | -------- | ----- | ----- | ----- | ----- | ------- |
-| \-17.16056 | 14.89375 | 1     | FALSE | 1     | Dakar | Dakar.1 |
-| \-17.16004 | 14.89333 | 2     | FALSE | 1     | Dakar | Dakar.1 |
-| \-17.16000 | 14.89335 | 3     | FALSE | 1     | Dakar | Dakar.1 |
-| \-17.15683 | 14.89042 | 4     | FALSE | 1     | Dakar | Dakar.1 |
+| long    | lat   | id        | Production |
+| ------- | ----- | --------- | ---------- |
+| \-17.33 | 14.75 | Dakar     | 0          |
+| \-16.25 | 14.75 | Diourbel  | 46231      |
+| \-16.53 | 14.36 | Fatick    | 80000      |
+| \-12.18 | 12.80 | KÃ©dougou | 152        |
 
 ## 3.4. Overview of the data mydata1
 
 Type: `head(mydata1, 4)`
 
-| Longitude  | Latitude | order | hole  | piece | id    | group   |
-| ---------- | -------- | ----- | ----- | ----- | ----- | ------- |
-| \-17.16056 | 14.89375 | 1     | FALSE | 1     | Dakar | Dakar.1 |
-| \-17.16004 | 14.89333 | 2     | FALSE | 1     | Dakar | Dakar.1 |
-| \-17.16000 | 14.89335 | 3     | FALSE | 1     | Dakar | Dakar.1 |
-| \-17.15683 | 14.89042 | 4     | FALSE | 1     | Dakar | Dakar.1 |
+| Region   | long    | lat   |
+| -------- | ------- | ----- |
+| DAKAR    | \-17.33 | 14.75 |
+| DIOURBEL | \-16.25 | 14.75 |
+| FATICK   | \-16.53 | 14.36 |
+| KAOLACK  | \-16.00 | 14.00 |
 
 
 ## 3.4. Join the data and the shapefle 
@@ -214,14 +280,12 @@ Type: `head(plotData)`
 
 You will get this table
 
-| Longitude  | Latitude | order | hole  | piece | id    | group   |
-| ---------- | -------- | ----- | ----- | ----- | ----- | ------- |
-| \-17.16056 | 14.89375 | 1     | FALSE | 1     | Dakar | Dakar.1 |
-| \-17.16004 | 14.89333 | 2     | FALSE | 1     | Dakar | Dakar.1 |
-| \-17.16000 | 14.89335 | 3     | FALSE | 1     | Dakar | Dakar.1 |
-| \-17.15683 | 14.89042 | 4     | FALSE | 1     | Dakar | Dakar.1 |
-
-
+| Longitude  | Latitude | order | hole  | piece | id    | group   | long    | lat   | Production |
+| ---------- | -------- | ----- | ----- | ----- | ----- | ------- | ------- | ----- | ---------- |
+| \-17.16056 | 14.89375 | 1     | FALSE | 1     | Dakar | Dakar.1 | \-17.33 | 14.75 | 0          |
+| \-17.16004 | 14.89333 | 2     | FALSE | 1     | Dakar | Dakar.1 | \-17.33 | 14.75 | 0          |
+| \-17.16000 | 14.89335 | 3     | FALSE | 1     | Dakar | Dakar.1 | \-17.33 | 14.75 | 0          |
+| \-17.15683 | 14.89042 | 4     | FALSE | 1     | Dakar | Dakar.1 | \-17.33 | 14.75 | 0          |
 
 ## 3.6. Make the plot 
 
@@ -240,8 +304,7 @@ p <- ggplot() +
   
   coord_map()+
   
-  
-  
+    
   scale_fill_distiller(palette = "Greens",direction=1) +
   
   
@@ -291,6 +354,14 @@ Just call the map variable p
 p
 
 ```
+
+
+
+Insert an Image
+
+
+
+
 
 That is it!
 
@@ -357,6 +428,14 @@ p
 ```
 
 
+
+
+Insert an image here
+
+
+
+
+
 **Export a high quality map** by typing:
 
 **PDF format**
@@ -379,16 +458,33 @@ To find out a desirable position for scale bar or any adjustment, it is possible
 plot(myFile, axes=T, col="aliceblue")
 ```
 
-and then typing:
+
+You will get this output
+
+
+
+
+
+Insert an image here
+
+
+
+
+
+
+and then type:
 
 
 
 ```
-locator(n=2)  # 2 is just an example. You can define many number as much as possible
+locator(n=2)  
 
 ```
 
-and using your mouse, click on the position you want. You will get the coordinates.
+
+2 is just an example. You can define many number as much as possible.
+Using your mouse, click on the position you want. You will get the coordinates.
+
 
 
 # 6. Q & A
