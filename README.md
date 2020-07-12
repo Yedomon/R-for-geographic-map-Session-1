@@ -221,7 +221,7 @@ p
 You should get this output:
 
 
-Insert an image
+[Map 01](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/img/map%2001.png)
 
 
 
