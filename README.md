@@ -54,16 +54,15 @@ devtools::install_github("3wen/legendMap")
 ## Course outline
 
 
-
-| 1. | Working directory setting, data preparation and shapefile importation | \*\*5 \*     |
-| -- | --------------------------------------------------------------------- | ------------ |
-| 2. | Rendering a basic map in R using ggplot2                              | \*\*10 min\* |
-| 3. | Rendering a choropleth map                                            | \*\*20 min\* |
-| 4. | Add a scale bar and North Arrow                                       | \*\*5 min\*  |
-| 5. | Tips                                                                  | \*\*5 mn\*   |
-| 6. | Q & A                                                                 | \*\*15 min\* |
-|    | Total                                                                 | \*\*60 min\* |
-
+| #  | Section                                                               | Duration |
+| -- | --------------------------------------------------------------------- | -------- |
+| 1. | Working directory setting, data preparation and shapefile importation | 5        |
+| 2. | Rendering a basic map in R using ggplot2                              | 10 min   |
+| 3. | Rendering a choropleth map                                            | 20 min   |
+| 4. | Add a scale bar and North Arrow                                       | 5 min    |
+| 5. | Tips                                                                  | 5 mn     |
+| 6. | Q & A                                                                 | 15 min   |
+|    | Total                                                                 | 60 min   |
 
 # 1. Working directory setting, data preparation and shapefile importation
 
