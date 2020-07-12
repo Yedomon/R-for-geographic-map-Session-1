@@ -34,11 +34,10 @@ It is more easier to install CRAN packages at once by typing
 install.packages(c("rgdal", "mapdata", "mapproj" ,"maps" ,"ggplot2", "ggrepel", "dplyr", "scales", "ggmap"))
 ```
 
-For installation of [legendMap](https://github.com/3wen/legendMap) package you need to install the devtools](https://cran.r-project.org/web/packages/devtools/index.html) package
-first.
+For installation of the [legendMap](https://github.com/3wen/legendMap) package, you need to install the [devtools](https://cran.r-project.org/web/packages/devtools/index.html) package first.
 
 ```
-install.pacakges("devtools")
+install.packages("devtools")
 ```
 
 Then install [legendMap](https://github.com/3wen/legendMap)
