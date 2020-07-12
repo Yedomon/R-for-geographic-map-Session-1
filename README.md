@@ -220,7 +220,8 @@ p
 
 You should get this output:
 
-c
+
+[Fig.1](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/img/map%2001.png)
 
 
 
@@ -351,15 +352,10 @@ Just call the map variable p
 
 ```
 p
-
 ```
 
 
 [Fig.2](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/img/map%2002.png)
-
-Insert an Image
-
-
 
 
 
@@ -461,7 +457,6 @@ plot(myFile, axes=T, col="aliceblue")
 
 
 You will get this output
-
 
 
 
