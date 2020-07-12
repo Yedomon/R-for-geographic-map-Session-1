@@ -56,7 +56,7 @@ devtools::install_github("3wen/legendMap")
 | #  | Section                                                               | Duration |
 | -- | --------------------------------------------------------------------- | -------- |
 | 1. | [Working directory setting, data preparation and shapefile importation](https://github.com/Yedomon/R-for-geographic-map-Session-1#1-working-directory-setting-data-preparation-and-shapefile-importation) | 5 min        |
-| 2. | Rendering a basic map in R using ggplot2                              | 10 min   |
+| 2. | [Rendering a basic map in R using ggplot2](https://github.com/Yedomon/R-for-geographic-map-Session-1#2-rendering-a-basic-map-in-r-using-ggplot2)                              | 10 min   |
 | 3. | Rendering a choropleth map                                            | 20 min   |
 | 4. | Add a scale bar and North Arrow                                       | 5 min    |
 | 5. | Tips                                                                  | 5 mn     |
