@@ -1,10 +1,9 @@
 
 # R-for-geographic-map-Session-1
-This is a tutorial for rendering geographic map using R
 
-Welcome to the training module designed for postdocs and alumni fellows in the ***Climap Africa***
+This is a tutorial for rendering geographic map using **R**
 
-programme. We will work today with the open data science tool **R**.
+Welcome to the training module designed for postdocs and alumni fellows in the [**Climap Africa**] (https://www.daad.de/en/the-daad/what-we-do/sustainable-development/funding-programmes/climapafrica/) programme. We will work today with the open data science tool **R**.
 
 **Course objective**: Enhance R users for informative geographic maps rendering using R
 
@@ -111,7 +110,7 @@ attr(,"package")
 class(myFile)
 ```
 
-The class should display as follow
+The class should display as follows
 
 ```
 [1] "SpatialPolygonsDataFrame"
@@ -129,7 +128,7 @@ names(myFile)
 
 
 
-The name will display as follow:
+The name will display as follows:
 
 ```
 
@@ -145,7 +144,7 @@ The name will display as follow:
 print(myFile$NAME_1)
 ```
 
-The regions names should appear as follow:
+The regions names should appear as follows:
 
 
 ```
@@ -516,7 +515,7 @@ Using your mouse, click on the position you want. You will get the coordinates.
 
 # References
 
-* Pebesma EJ, Bivand RS (2005). “Classes and methods for spatial data in R.” R News, 5(2), 9–13. https://CRAN.R-project.org/doc/Rnews/.
+* Pebesma EJ, Bivand RS (2005). Classes and methods for spatial data in R. R News, 5(2), 9–13. https://CRAN.R-project.org/doc/Rnews/.
 * Bivand RS, Pebesma E, Gomez-Rubio V (2013). Applied spatial data analysis with R, Second edition. Springer, NY. https://asdar-book.org/.
 * Wickham H (2016). ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. ISBN 978-3-319-24277-4, https://ggplot2.tidyverse.org.
 
