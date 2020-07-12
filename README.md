@@ -58,12 +58,9 @@ devtools::install_github("3wen/legendMap")
 | 1. | [Working directory setting, data preparation and shapefile importation](https://github.com/Yedomon/R-for-geographic-map-Session-1#1-working-directory-setting-data-preparation-and-shapefile-importation) | 5 min        |
 | 2. | [Rendering a basic map in R using ggplot2](https://github.com/Yedomon/R-for-geographic-map-Session-1#2-rendering-a-basic-map-in-r-using-ggplot2)                              | 10 min   |
 | 3. | [Rendering a choropleth map](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/README.md#3-rendering-a-choropleth-map)                                            | 20 min   |
-| 4. | [Add a scale bar and North Arrow](
-https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/README.md#4-add-scale-bar-and-north-arrow)                                       | 5 min    |
-| 5. | [Tips](
-https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/README.md#5-tips)                                                                  | 5 mn     |
-| 6. | [Q & A](
-https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/README.md#6-q--a)                                                                 | 15 min   |
+| 4. | [Add a scale bar and North Arrow](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/README.md#4-add-scale-bar-and-north-arrow)                                       | 5 min    |
+| 5. | [Tips](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/README.md#5-tips)                                                                  | 5 mn     |
+| 6. | [Q & A](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/README.md#6-q--a)                                                                 | 15 min   |
 |    | Total                                                                 | 60 min   |
 
 # 1. Working directory setting, data preparation and shapefile importation
