@@ -3,7 +3,7 @@
 
 This is a tutorial for rendering geographic map using **R**
 
-Welcome to the training module designed for postdocs and alumni fellows in the [**Climap Africa**] (https://www.daad.de/en/the-daad/what-we-do/sustainable-development/funding-programmes/climapafrica/) programme. We will work today with the open data science tool **R**.
+Welcome to the training module designed for postdocs and alumni fellows in the [**Climap Africa**](https://www.daad.de/en/the-daad/what-we-do/sustainable-development/funding-programmes/climapafrica/) programme. We will work today with the open data science tool **R**.
 
 **Course objective**: Enhance R users for informative geographic maps rendering using R
 
