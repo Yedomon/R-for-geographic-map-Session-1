@@ -20,7 +20,7 @@ Welcome to the training module designed for postdocs and alumni fellows in the [
    * [maps](https://cran.r-project.org/web/packages/maps/index.html), 
    * [ggplot2](https://cran.r-project.org/web/packages/ggplot2/index.html), 
    * [ggrepel](https://cran.r-project.org/web/packages/ggrepel/index.html), 
-   * [legendMap](https://github.com/3wen/legendMap) 
+   * [legendMap](https://github.com/3wen/legendMap), 
    * [dplyr](https://cran.r-project.org/web/packages/dplyr/index.html), 
    * [scales](https://cran.r-project.org/web/packages/scales/index.html), and 
    * [ggmap](https://cran.r-project.org/web/packages/ggmap/index.html). 
