@@ -14,16 +14,16 @@ Welcome to the training module designed for postdocs and alumni fellows in the [
 * Install [R](https://cran.r-project.org/bin/windows/base/) and [RStudio](https://rstudio.com/products/rstudio/download/) on Windows 7, 8 or 10. A tutorial for a beginner is [here](https://medium.com/@GalarnykMichael/install-r-and-rstudio-on-windows-5f503f708027).
 
 * Install the following packages before the course: 
-* [rgdal](https://cran.r-project.org/web/packages/rgdal/index.html), 
-* [mapdata](https://cran.r-project.org/web/packages/mapdata/index.html),
-* [mapproj](https://cran.r-project.org/web/packages/mapproj/index.html),
-* [maps](https://cran.r-project.org/web/packages/maps/index.html), 
-* [ggplot2](https://cran.r-project.org/web/packages/ggplot2/index.html), 
-* [ggrepel](https://cran.r-project.org/web/packages/ggrepel/index.html), 
-* [legendMap](https://github.com/3wen/legendMap) 
-* [dplyr](https://cran.r-project.org/web/packages/dplyr/index.html), 
-* [scales](https://cran.r-project.org/web/packages/scales/index.html), and 
-* [ggmap](https://cran.r-project.org/web/packages/ggmap/index.html). 
+   * [rgdal](https://cran.r-project.org/web/packages/rgdal/index.html), 
+   * [mapdata](https://cran.r-project.org/web/packages/mapdata/index.html),
+   * [mapproj](https://cran.r-project.org/web/packages/mapproj/index.html),
+   * [maps](https://cran.r-project.org/web/packages/maps/index.html), 
+   * [ggplot2](https://cran.r-project.org/web/packages/ggplot2/index.html), 
+   * [ggrepel](https://cran.r-project.org/web/packages/ggrepel/index.html), 
+   * [legendMap](https://github.com/3wen/legendMap) 
+   * [dplyr](https://cran.r-project.org/web/packages/dplyr/index.html), 
+   * [scales](https://cran.r-project.org/web/packages/scales/index.html), and 
+   * [ggmap](https://cran.r-project.org/web/packages/ggmap/index.html). 
 
 A tutorial for package installation in RStudio is [here](https://subscription.packtpub.com/book/big_data_and_business_intelligence/9781783980246/1/ch01lvl1sec11/installing-libraries-in-r-and-rstudio).
 
