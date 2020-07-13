@@ -163,7 +163,7 @@ The name will display as follows:
 ## 1.7. Check the regions names
 
 
-```ruby
+```r
 
 print(myFile$NAME_1)
 
@@ -172,7 +172,7 @@ print(myFile$NAME_1)
 The regions names should appear as follows:
 
 
-```ruby
+```r
 
 [1] "Dakar"       "Diourbel"    "Fatick"      "KÃ©dougou"   "Kaffrine"   
  [6] "Kaolack"     "Kolda"       "Louga"       "Matam"       "SÃ©dhiou"   
@@ -189,7 +189,7 @@ The regions names should appear as follows:
 You can import the packages like this:
 
 
-```ruby
+```r
 library(rgdal)
 library(mapdata)
 library(mapproj)
@@ -205,7 +205,7 @@ library(ggmap)
 
 Or, to load multiple packages at once, type:
 
-```ruby
+```r
 Packages = "rgdal", "mapdata", "mapproj" ,"maps" ,"ggplot2", "ggrepel", "legendMap", "dplyr", "scales", "ggmap")
 
 lapply(Packages, library, character.only = TRUE)
@@ -216,7 +216,7 @@ lapply(Packages, library, character.only = TRUE)
 
 ## 2.1. Change in dataframe format for ggplot2
 
-```ruby
+```r
 
 myDF = fortify(myFile, region = "NAME_1")
 
@@ -228,7 +228,7 @@ myDF = fortify(myFile, region = "NAME_1")
 
 Type: 
 
-```ruby
+```r
 
 head(myDF, 4)
 
@@ -245,7 +245,7 @@ head(myDF, 4)
 
 ## 2.3. Change long to Longitude and lat to Latitude
 
-```ruby
+```r
 myDF = rename(myDF, Longitude = long, Latitude= lat)
 
 ```
@@ -255,7 +255,7 @@ myDF = rename(myDF, Longitude = long, Latitude= lat)
 
 Type: 
 
-```ruby
+```r
 head(myDF, 4)
 
 ```
@@ -271,7 +271,7 @@ head(myDF, 4)
 
 ## 2.5. Make the basic plot
 
-```ruby
+```r
 
 p <- ggplot() +
   geom_polygon(data = myDF, 
@@ -284,7 +284,7 @@ p <- ggplot() +
 
 The map is in p.
 
-```ruby
+```r
 p
 
 ```
@@ -301,7 +301,7 @@ You should get this output:
 
 ## 3.1. Import the data we want to plot on the map.Here that is the production of pearl millet per region
 
-```ruby
+```r
 
 mydata = read.csv("production_data.csv", header=TRUE, sep=";")
 
@@ -309,7 +309,7 @@ mydata = read.csv("production_data.csv", header=TRUE, sep=";")
 
 ## 3.2. Import the the regions names for annotation step
 
-```ruby
+```r
 
 mydata1 = read.csv("region_names.csv", header=TRUE, sep=";")
 
@@ -321,7 +321,7 @@ mydata1 = read.csv("region_names.csv", header=TRUE, sep=";")
 
 Type:
 
-```ruby
+```r
 head(mydata, 4)
 
 ```
@@ -337,7 +337,7 @@ head(mydata, 4)
 
 Type: 
 
-```ruby
+```r
 head(mydata1, 4)
 
 ```
@@ -353,7 +353,7 @@ head(mydata1, 4)
 ## 3.4. Join the data and the shapefle 
 
 
-```ruby
+```r
 plotData <- left_join(myDF, mydata)
 ```
 
@@ -365,7 +365,7 @@ plotData <- left_join(myDF, mydata)
 
 Type: 
 
-```ruby
+```r
 head(plotData)
 ```
 
@@ -380,7 +380,7 @@ You will get this table
 
 ## 3.6. Make the plot 
 
-```ruby
+```r
 
 p <- ggplot() +
   
@@ -441,7 +441,7 @@ p <- ggplot() +
 
 Just call the map variable p
 
-```ruby
+```r
 p
 ```
 
@@ -454,7 +454,7 @@ That is it!
 
 # 4. Add scale bar and north arrow 
 
-```ruby
+```r
 p <- ggplot() +
   
   
@@ -509,7 +509,7 @@ p <- ggplot() +
 
 Just call the map variable p
 
-```ruby
+```r
 p
 
 ```
@@ -528,14 +528,14 @@ p
 
 **PDF format**
 
-```ruby
+```r
 ggsave(p, file = "carte.pdf", limitsize = FALSE, width = 12, height = 10.5, dpi=500 )
 
 ```
 
 **PNG format**
 
-```ruby
+```r
 ggsave(p, file = "carte.png", limitsize = FALSE, width = 10, height = 6.5, type = "cairo-png", dpi=500)
 
 ```
@@ -543,7 +543,7 @@ ggsave(p, file = "carte.png", limitsize = FALSE, width = 10, height = 6.5, type 
 
 To find out a desirable position for scale bar or any adjustment, it is possible to plot the map with the basic R by typing:
 
-```ruby
+```r
 plot(myFile, axes=T, col="aliceblue")
 ```
 
@@ -565,7 +565,7 @@ and then type:
 
 
 
-```ruby
+```r
 locator(n=2)  
 
 ```
