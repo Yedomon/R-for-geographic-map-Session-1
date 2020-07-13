@@ -29,7 +29,7 @@ A tutorial for package installation in RStudio is [here](https://subscription.pa
 
 It is more easier to install CRAN packages at once by typing 
 
-```r
+```ruby
 
 install.packages(c("rgdal", "mapdata", "mapproj" ,"maps" ,"ggplot2", "ggrepel", "dplyr", "scales", "ggmap"))
 
