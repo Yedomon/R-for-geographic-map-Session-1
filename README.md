@@ -29,19 +29,24 @@ A tutorial for package installation in RStudio is [here](https://subscription.pa
 
 It is more easier to install CRAN packages at once by typing 
 
-```
+```ruby
+
 install.packages(c("rgdal", "mapdata", "mapproj" ,"maps" ,"ggplot2", "ggrepel", "dplyr", "scales", "ggmap"))
+
 ```
 
 For installation of the [legendMap](https://github.com/3wen/legendMap) package, you need to install the [devtools](https://cran.r-project.org/web/packages/devtools/index.html) package first.
 
-```
+```ruby
+
 install.packages("devtools")
+
 ```
 
 Then install [legendMap](https://github.com/3wen/legendMap)
 
-```
+```ruby
+
 devtools::install_github("3wen/legendMap")
 
 ```
@@ -69,34 +74,46 @@ devtools::install_github("3wen/legendMap")
 
 The working directory is the folder named `R MAP`. Please put all the shapefiles and data in your working disrectory. To set your working directory, type:
 
-```
+```ruby
+
 setwd("C:/Users/ANGE/Documents/R MAP")
+
 ```
 
 
  
 ## 1.2. Clean the R environment workspace 
 
-```
+```ruby
+
 rm(list=ls())
+
 ```
 
 
 ## 1.3. Set shapefile path
-```
+
+
+```ruby
+
 mySHP="C:/Users/ANGE/Documents/R MAP"
+
 ```
 
 
 ## 1.4. Import the shapefile 
-```
+
+```ruby
+
 myFile=readOGR (mySHP, layer="SEN_adm1", stringsAsFactors=FALSE)
+
 ```
 
 This result should appear
 
 
-```
+```ruby
+
 [1] "SpatialPolygonsDataFrame"
 attr(,"package")
 [1] "sp"
@@ -106,13 +123,16 @@ attr(,"package")
 
 
 ## 1.5. Check the class of the shapefile
-```
+
+
+```ruby
 class(myFile)
+
 ```
 
 The class should display as follows
 
-```
+```ruby
 [1] "SpatialPolygonsDataFrame"
 attr(,"package")
 [1] "sp"
@@ -122,7 +142,8 @@ attr(,"package")
 
 
 ## 1.6. Check the variables names
-```
+
+```ruby
 names(myFile)
 ```
 
@@ -130,7 +151,7 @@ names(myFile)
 
 The name will display as follows:
 
-```
+```ruby
 
 [1] "ID_0"      "ISO"       "NAME_0"    "ID_1"      "NAME_1"    "TYPE_1"   
 [7] "ENGTYPE_1" "NL_NAME_1" "VARNAME_1"
@@ -140,14 +161,18 @@ The name will display as follows:
 
 
 ## 1.7. Check the regions names
-```
+
+
+```ruby
+
 print(myFile$NAME_1)
+
 ```
 
 The regions names should appear as follows:
 
 
-```
+```ruby
 
 [1] "Dakar"       "Diourbel"    "Fatick"      "KÃ©dougou"   "Kaffrine"   
  [6] "Kaolack"     "Kolda"       "Louga"       "Matam"       "SÃ©dhiou"   
@@ -164,7 +189,7 @@ The regions names should appear as follows:
 You can import the packages like this:
 
 
-```
+```ruby
 library(rgdal)
 library(mapdata)
 library(mapproj)
@@ -175,29 +200,39 @@ library(legendMap)
 library(dplyr)
 library(scales)
 library(ggmap)
+
 ```
 
 Or, to load multiple packages at once, type:
 
-```
+```ruby
 Packages = "rgdal", "mapdata", "mapproj" ,"maps" ,"ggplot2", "ggrepel", "legendMap", "dplyr", "scales", "ggmap")
 
 lapply(Packages, library, character.only = TRUE)
+
 ```
 
 # 2. Rendering a basic map in R using ggplot2
 
 ## 2.1. Change in dataframe format for ggplot2
 
-```
+```ruby
+
 myDF = fortify(myFile, region = "NAME_1")
+
 ```
 
 
 ## 2.2. Overview of the data myDF
 
 
-Type: `head(myDF, 4)`
+Type: 
+
+```ruby
+
+head(myDF, 4)
+
+```
 
 
 | long       | lat      | order | hole  | piece | id    | group   |
@@ -210,14 +245,20 @@ Type: `head(myDF, 4)`
 
 ## 2.3. Change long to Longitude and lat to Latitude
 
-```
+```ruby
 myDF = rename(myDF, Longitude = long, Latitude= lat)
+
 ```
 
 ## 2.4.Overview of the myDF
 
 
-Type: `head(myDF, 4)`
+Type: 
+
+```ruby
+head(myDF, 4)
+
+```
 
 
 | Longitude  | Latitude | order | hole  | piece | id    | group   |
@@ -230,7 +271,8 @@ Type: `head(myDF, 4)`
 
 ## 2.5. Make the basic plot
 
-```
+```ruby
+
 p <- ggplot() +
   geom_polygon(data = myDF, 
                aes(x = Longitude, y = Latitude, group = group), 
@@ -242,7 +284,7 @@ p <- ggplot() +
 
 The map is in p.
 
-```
+```ruby
 p
 
 ```
@@ -259,21 +301,30 @@ You should get this output:
 
 ## 3.1. Import the data we want to plot on the map.Here that is the production of pearl millet per region
 
-```
+```ruby
+
 mydata = read.csv("production_data.csv", header=TRUE, sep=";")
+
 ```
 
 ## 3.2. Import the the regions names for annotation step
 
-```
+```ruby
+
 mydata1 = read.csv("region_names.csv", header=TRUE, sep=";")
+
 ```
 
 
 
 ## 3.3. Overview of the data mydata
 
-Type:`head(mydata, 4)`
+Type:
+
+```ruby
+head(mydata, 4)
+
+```
 
 | long    | lat   | id        | Production |
 | ------- | ----- | --------- | ---------- |
@@ -284,7 +335,12 @@ Type:`head(mydata, 4)`
 
 ## 3.4. Overview of the data mydata1
 
-Type: `head(mydata1, 4)`
+Type: 
+
+```ruby
+head(mydata1, 4)
+
+```
 
 | Region   | long    | lat   |
 | -------- | ------- | ----- |
@@ -295,7 +351,9 @@ Type: `head(mydata1, 4)`
 
 
 ## 3.4. Join the data and the shapefle 
-```
+
+
+```ruby
 plotData <- left_join(myDF, mydata)
 ```
 
@@ -305,7 +363,11 @@ plotData <- left_join(myDF, mydata)
 
 ## 3.5. Overview of plotData
 
-Type: `head(plotData)`
+Type: 
+
+```ruby
+head(plotData)
+```
 
 You will get this table
 
@@ -318,7 +380,7 @@ You will get this table
 
 ## 3.6. Make the plot 
 
-```
+```ruby
 
 p <- ggplot() +
   
@@ -379,7 +441,7 @@ p <- ggplot() +
 
 Just call the map variable p
 
-```
+```ruby
 p
 ```
 
@@ -392,7 +454,7 @@ That is it!
 
 # 4. Add scale bar and north arrow 
 
-```
+```ruby
 p <- ggplot() +
   
   
@@ -447,7 +509,7 @@ p <- ggplot() +
 
 Just call the map variable p
 
-```
+```ruby
 p
 
 ```
@@ -466,13 +528,14 @@ p
 
 **PDF format**
 
-```
+```ruby
 ggsave(p, file = "carte.pdf", limitsize = FALSE, width = 12, height = 10.5, dpi=500 )
 
 ```
 
 **PNG format**
-```
+
+```ruby
 ggsave(p, file = "carte.png", limitsize = FALSE, width = 10, height = 6.5, type = "cairo-png", dpi=500)
 
 ```
@@ -480,7 +543,7 @@ ggsave(p, file = "carte.png", limitsize = FALSE, width = 10, height = 6.5, type 
 
 To find out a desirable position for scale bar or any adjustment, it is possible to plot the map with the basic R by typing:
 
-```
+```ruby
 plot(myFile, axes=T, col="aliceblue")
 ```
 
@@ -502,7 +565,7 @@ and then type:
 
 
 
-```
+```ruby
 locator(n=2)  
 
 ```
