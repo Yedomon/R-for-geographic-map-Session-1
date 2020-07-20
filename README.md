@@ -591,6 +591,10 @@ Using your mouse, click on the position you want. You will get the coordinates.
 
 
 Scripts in this repository are licensed under General Public License v3.
+> For information inquiry please email Yedomon Ange Bovys Zoclanclounon PhD Candidate (yedomon@jbnu.ac.kr)
+
+
+Scripts in this repository are licensed under General Public License v3.
 
 For information inquiry please email Yedomon Ange Bovys Zoclanclounon PhD Candidate (yedomon@jbnu.ac.kr)
 
