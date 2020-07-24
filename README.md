@@ -114,9 +114,11 @@ This result should appear
 
 ```ruby
 
-[1] "SpatialPolygonsDataFrame"
-attr(,"package")
-[1] "sp"
+OGR data source with driver: ESRI Shapefile 
+Source: "C:\Users\ANGE\Documents\R MAP", layer: "SEN_adm1"
+with 14 features
+It has 9 fields
+Integer64 fields read as strings:  ID_0 ID_1 
 
 ```
 
