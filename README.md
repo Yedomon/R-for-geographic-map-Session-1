@@ -39,7 +39,7 @@ For installation of the [legendMap](https://github.com/3wen/legendMap) package, 
 
 ```ruby
 
-install.packages("devtools")
+install.packages("remotes")
 
 ```
 
@@ -47,7 +47,7 @@ Then install [legendMap](https://github.com/3wen/legendMap)
 
 ```ruby
 
-devtools::install_github("3wen/legendMap")
+remotes::install_github("3wen/legendMap")
 
 ```
 
