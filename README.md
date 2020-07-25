@@ -47,7 +47,7 @@ Then install [legendMap](https://github.com/3wen/legendMap)
 
 ```ruby
 
-remotes::install_github("3wen/legendMap")
+remotes::install_github("3wen/legendMap", force = TRUE)
 
 ```
 
