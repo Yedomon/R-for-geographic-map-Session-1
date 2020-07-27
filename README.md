@@ -53,6 +53,10 @@ remotes::install_github("3wen/legendMap", force = TRUE)
 
 ```
 
+>  Please skip this part if you do not encounter package installation troubles.
+
+
+
 Based on our recent experience on the online session, some participants have some troubles regarding this warning message:
 
 
