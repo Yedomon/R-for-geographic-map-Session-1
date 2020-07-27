@@ -1,0 +1,246 @@
+#--------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------
+#--------------------R for georaphic map Session 1-------------------------------------
+#--------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------
+
+# Package loading
+# Chargement des packages
+
+library(rgdal) 
+library(mapproj)
+library(maptools)
+library(maps)
+library(ggplot2)
+library(ggrepel)
+library(dplyr)
+library(legendMap)
+library(scales)
+
+
+# English: Set the working directory
+# French: Configurer le repertoire de travail
+
+setwd("C:/Users/ANGE/Documents/R MAP")
+
+
+# English: Clear objects from the R environment workspace
+# French: Eliminer tout fichiers dans l'espace de travail R
+
+rm(list=ls())
+
+
+# English: Set the shapefile full path
+# French: Indiquer le chemin d'acces au shapefile
+
+
+mySHP="C:/Users/ANGE/Documents/R MAP"
+
+
+# English: Import the shapefile
+# French: Importer le shapefile
+
+myFile=readOGR (mySHP, layer="SEN_adm1", stringsAsFactors=FALSE)
+
+# English: Check the class of the shapefile
+# French: Verifier la class de l'objet shapefile
+
+class(myFile)
+
+
+# English: Check the variables names
+# French: Verifier le nom des variables de l'objet shapefile
+
+names(myFile)
+
+# English: Check the regions names
+# French: Vérifier le nom des regions
+
+print(myFile$NAME_1)
+
+
+
+# English: Change the object sp file into dataframe format for ggplot2
+# French: Passer du format polygone spatial a celui de tableau pour usage avec ggplot2
+
+myDF = fortify(myFile, region = "NAME_1")
+
+
+# English: Overview of the data myDF
+# French: Apercu du tableau myDF
+
+head(myDF, 4)
+
+# English: Change long to Longitude and lat to Latitude respectively
+# French: Changer long et lat en Longitude et latitude respectivement
+
+myDF = rename(myDF, Longitude = long, Latitude= lat)
+
+# English: Overview of the data myDF
+# French: Apercu du tableau myDF
+
+head(myDF, 4)
+
+
+# English: Make a basic plot
+# French: Faire une carte basique
+
+p <- ggplot() +
+  geom_polygon(data = myDF, 
+               aes(x = Longitude, y = Latitude, group = group), 
+               color = "black", size = 0.25) +
+  coord_map() +
+  theme_minimal() +
+  ggtitle("Basic map with ggplot2")
+
+p
+
+#------------------------------------------------------------------
+#------------------------------------------------------------------
+
+# English: Rendering a choropleth map
+# French: Faire une carte choroplethe
+
+
+# English:Import the data we want to plot on the map.
+# Here that is the production of pearl millet per region
+
+# French: Importer les donnees que nous voulons projeter sur la carte
+# Ici, nous utiliserons les données de production de mil suivant les regions
+
+mydata = read.csv("production_data.csv", header=TRUE, sep=";")
+
+
+# English: Import the the regions names for annotation step
+# French: Importer le nom des regions pour annotation de la carte
+
+
+mydata1 = read.csv("region_names.csv", header=TRUE, sep=";")
+
+
+
+# English: Overview of the data mydata
+# French: Apercu du jeu de donnees mydata
+
+head(mydata, 4)
+
+# English: Overview of the data mydata1
+# French: Apercu du jeu de donnees mydata1
+
+head(mydata1, 4)
+
+
+# English: Join your data to the shapefile
+# French: Joindre vos donnees au shapefile
+
+
+plotData <- left_join(myDF, mydata)
+
+
+# English: Overview of the data plotData
+# French: Apercu du jeu de donnees plotData
+
+head(plotData)
+
+
+# English: Make the plot
+# French: Faire la carte
+
+
+p <- ggplot() +
+  
+  
+  # English: Plot the shapefile geographic information
+  # French: Projeter les contours geographiques du shapefile
+  
+  geom_polygon(data = plotData, 
+               aes(x = Longitude, 
+                   y = Latitude, 
+                   group = group,
+                   fill = Production), 
+               color = "black", 
+               size = 0.25) +
+  #-------------------------------------------------------------------
+  
+  # English: Map projection type. Default is "mercator". 
+  #See help(coord_map() for other choice)
+  
+  # French: Type de projection. Mercator par defaut
+  # Voir help(coord_map() pour d'autres choix)
+  coord_map() +
+  
+  
+  #------------------------------------------------------------------
+  
+  
+  # English: Color choice, direction = 1 means colored from lowest to highest value
+  # French: Choix de couleur. direction=1 veut dire colorer par ordre croissant de valeur
+  scale_fill_distiller(palette = "Greens", direction=1) +
+  
+  #------------------------------------------------------------------
+
+
+  # English: Plot the localization points corresponding to each region
+  # French: Projeter les points geographiques de chaque region
+  
+  geom_point(
+    data=mydata1, 
+    aes(x=long, y=lat), 
+    shape = 21,
+    fill = "white",
+    size = 3, 
+    color = "black") +
+  
+  #---------------------------------------------------------------------
+  
+  # English: Avoid overlapping text for the points annotation
+  # French: Eviter la superposition des noms de regions
+  geom_label_repel(data=mydata1, 
+                   aes(x=long, y=lat, label=Region),
+                   fontface = 'bold', color = 'black',
+                   box.padding = 0.35, point.padding = 0.5,
+                   segment.color = 'grey10')+
+  
+  
+  # English: Scale bar and north arrow
+  # French: Ajouter le north geographique et l'echelle
+  
+  scale_bar(lon = -12, lat = 16, #--longitude and latitude of the scale bar position 
+            
+            distance_lon = 40, distance_lat = 10, #--legnth and width of each rectangle
+            
+            distance_legend = 25, #--distance between legend rectangles and legend texts
+            
+            dist_unit = "km", #-- Unit
+            
+            arrow_length = 10, #-- Arrow length
+            
+            arrow_distance = 50, #-- Arrow distance to the scale bar
+            
+            arrow_north_size = 6) + #-- Arrow size
+  
+  
+  # English: Theme option
+  # French: Mise forme de l'arriere plan
+  
+  theme_minimal() + # Simple background
+  
+  
+  theme(panel.grid.major = 
+          element_line(
+            colour = "black", 
+            size = 0.5, 
+            linetype = "dotted")) + # Customize the grid line type, size and color
+  
+  theme(plot.background = 
+          element_rect(
+            colour = "white", 
+            size = 1)) + # Customize the background line type, color and size
+  
+  # Add a title
+  ggtitle("Map of Pearl Millet Production in Senegal (Rainy season 2017)")
+  
+  p
+  
+#----------------------------END-------------------------------------------------------
+  
