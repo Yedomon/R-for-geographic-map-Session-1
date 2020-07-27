@@ -6,7 +6,7 @@ This is a tutorial for rendering geographic map using **R**
 Welcome to the training module designed for postdocs and alumni fellows in the [**Climap Africa**](https://www.daad.de/en/the-daad/what-we-do/sustainable-development/funding-programmes/climapafrica/) programme. We will work today with the open data science tool **R**.
 
 
-***Note***
+***Note:***
 
 ***The [powerpoint file](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/R%20map%20session%201.pdf), [script](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/R_map_session_1_Final_code.txt), [datafiles](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/datafiles.zip) are freely available. Just click on the corresponding hyperlink.*** 
 
