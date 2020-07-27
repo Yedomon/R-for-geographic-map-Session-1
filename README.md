@@ -556,10 +556,25 @@ p <- ggplot() +
                  box.padding = 0.35, point.padding = 0.5,
                    segment.color = 'grey10')+
   
-  scale_bar(lon = -12, lat = 16, 
-            distance_lon = 40, distance_lat = 10, 
-            distance_legend = 25, dist_unit = "km", 
-            arrow_length = 10, arrow_distance = 50, arrow_north_size = 6)+
+       
+           
+  # English: Scale bar and north arrow
+  # French: Ajouter le north geographique et l'echelle
+  
+  scale_bar(lon = -12, lat = 16, #--longitude and latitude of the scale bar position 
+            
+            distance_lon = 40, distance_lat = 10, #--legnth and width of each rectangle
+            
+            distance_legend = 25, #--distance between legend rectangles and legend texts
+            
+            dist_unit = "km", #-- Unit
+            
+            arrow_length = 10, #-- Arrow length
+            
+            arrow_distance = 50, #-- Arrow distance to the scale bar
+            
+            arrow_north_size = 6) + #-- Arrow size
+  
   
   theme_minimal() +
   
