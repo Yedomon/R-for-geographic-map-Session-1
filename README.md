@@ -636,7 +636,7 @@ Using your mouse, click on the position you want. You will get the coordinates.
 
 
 
-> For information inquiry please email Yedomon Ange Bovys Zoclanclounon PhD Candidate (yedomon@jbnu.ac.kr)
+> For information inquiry please email Yedomon Ange Bovys Zoclanclounon PhD Candidate (angez9914@gmail.com)
 
 
 
