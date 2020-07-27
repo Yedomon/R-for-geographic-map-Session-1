@@ -37,7 +37,7 @@ install.packages(c("rgdal", "mapdata", "mapproj" ,"maps" ,"ggplot2", "ggrepel", 
 
 ```
 
-For installation of the [legendMap](https://github.com/3wen/legendMap) package, you need to install the [devtools](https://cran.r-project.org/web/packages/devtools/index.html) package first.
+For installation of the [legendMap](https://github.com/3wen/legendMap) package, you need to install the [remotes](https://cran.r-project.org/web/packages/remotes/index.html) package first.
 
 ```ruby
 
