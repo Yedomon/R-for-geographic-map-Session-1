@@ -56,7 +56,7 @@ remotes::install_github("3wen/legendMap", force = TRUE)
 Based on our recent experience on the online session, some participants have some troubles regarding this warning message:
 
 
-```
+```ruby
 Error in maptools::unionSpatialPolygons(cp, attr[, region]) : 
   isTRUE(gpclibPermitStatus()) is not TRUE
 ```
