@@ -53,7 +53,7 @@ remotes::install_github("3wen/legendMap", force = TRUE)
 
 ```
 
->  Please skip this part if you do not encounter package installation troubles.
+>  Please skip this part if you do not encounter package installation troubles. Continue [here](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/README.md#1-working-directory-setting-data-preparation-and-shapefile-importation)
 
 
 
