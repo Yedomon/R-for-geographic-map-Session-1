@@ -438,11 +438,30 @@ p <- ggplot() +
                    fill = Production), 
                color = "black", size = 0.25) +
   
+  #-------------------------------------------------------------------
+  
+  #English: Map projection type. Default is "mercator". 
+  #See help(coord_map() for other choice)
+  
   
   coord_map()+
   
     
+  #------------------------------------------------------------------
+  
+  
+  # English: Color choice, direction = 1 means colored from lowest to highest value
+  # French: Choix de couleur. direction=1 veut dire colorer par ordre croissant de valeur  
+    
   scale_fill_distiller(palette = "Greens",direction=1) +
+  
+  
+  #------------------------------------------------------------------
+
+
+  # English: Plot the localization points corresponding to each region
+  # French: Projeter les points geographiques de chaque region
+  
   
   
   geom_point(data=mydata1, 
@@ -452,6 +471,10 @@ p <- ggplot() +
              size = 3, 
              color = "black") +
   
+  #---------------------------------------------------------------------
+  
+  # English: Avoid overlapping text for the points annotation
+  # French: Eviter la superposition des noms de regions
   
   geom_label_repel(data=mydata1, 
                    aes(x=long, 
@@ -464,23 +487,28 @@ p <- ggplot() +
                    segment.color = 'grey10')+
   
   
-  theme_minimal() +
+ # English: Theme option
+  # French: Mise forme de l'arriere plan
+  
+  theme_minimal() + # Simple background
   
   
   theme(panel.grid.major = 
           element_line(
             colour = "black", 
             size = 0.5, 
-            linetype = "dotted")) +
+            linetype = "dotted")) + # Customize the grid line type, size and color
+  
   theme(plot.background = 
           element_rect(
             colour = "white", 
-            size = 1)) +
+            size = 1)) + # Customize the background line type, color and size
   
-  
+  # Add a title
   ggtitle("Map of Pearl Millet Production in Senegal (Rainy season 2017)")
-
-```
+  
+  
+  ```
 
 
 ### Map rendering
