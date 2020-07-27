@@ -22,9 +22,9 @@ Welcome to the training module designed for postdocs and alumni fellows in the [
    * [ggrepel](https://cran.r-project.org/web/packages/ggrepel/index.html), 
    * [legendMap](https://github.com/3wen/legendMap), 
    * [dplyr](https://cran.r-project.org/web/packages/dplyr/index.html), 
-   * [scales](https://cran.r-project.org/web/packages/scales/index.html), and 
-   * [ggmap](https://cran.r-project.org/web/packages/ggmap/index.html)
-   * [gpclib](https://cran.r-project.org/web/packages/gpclib/index.html)
+   * [scales](https://cran.r-project.org/web/packages/scales/index.html),  
+   * [ggmap](https://cran.r-project.org/web/packages/ggmap/index.html),
+   * [gpclib](https://cran.r-project.org/web/packages/gpclib/index.html), and
    * [rgeos](https://cran.r-project.org/web/packages/rgeos/index.html)
 
 A tutorial for package installation in RStudio is [here](https://subscription.packtpub.com/book/big_data_and_business_intelligence/9781783980246/1/ch01lvl1sec11/installing-libraries-in-r-and-rstudio).
