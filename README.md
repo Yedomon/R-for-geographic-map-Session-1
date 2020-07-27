@@ -51,6 +51,43 @@ remotes::install_github("3wen/legendMap", force = TRUE)
 
 ```
 
+Based on our recent experience on the online session, some participants have some troubles regarding this warning message:
+
+
+```
+Error in maptools::unionSpatialPolygons(cp, attr[, region]) : 
+  isTRUE(gpclibPermitStatus()) is not TRUE
+```
+
+Don't worry at all!
+
+It is easy to solve this issue.
+
+
+Just run the following codes:
+
+
+01. You need to install gpclib package by doing 
+
+```ruby
+install.packages("gpclib", dependencies=TRUE)
+```
+
+02. In addition you need to install an other package call rgeos
+
+```ruby
+install.packages("rgeos", dependencies=TRUE)
+```
+
+03. After you've run the previous codes, please check if the libraries are well installed:
+
+
+```ruby
+library(gpclib)
+library(rgeos)
+```
+
+04. Then run your R code for a nice map.
 
 
 * Download the data for exercise [here](https://github.com/Yedomon/R-for-geographic-map-Session-1/blob/master/datafiles.zip)
