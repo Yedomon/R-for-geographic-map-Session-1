@@ -427,6 +427,9 @@ You will get this table
 
 p <- ggplot() +
   
+
+# English: Plot the shapefile geographic information
+# French: Projeter les contours geographiques du shapefile
   
   geom_polygon(data = plotData, 
                aes(x = Longitude, 
