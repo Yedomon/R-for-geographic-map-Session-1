@@ -241,13 +241,15 @@ library(legendMap)
 library(dplyr)
 library(scales)
 library(ggmap)
+library(gpclib)
+library(rgeos)
 
 ```
 
 Or, to load multiple packages at once, type:
 
 ```r
-Packages = "rgdal", "mapdata", "mapproj" ,"maps" ,"ggplot2", "ggrepel", "legendMap", "dplyr", "scales", "ggmap")
+Packages = "rgdal", "mapdata", "mapproj" ,"maps" ,"ggplot2", "ggrepel", "legendMap", "dplyr", "scales", "ggmap", "gpclib","rgeos")
 
 lapply(Packages, library, character.only = TRUE)
 
